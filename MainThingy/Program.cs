@@ -50,12 +50,6 @@ while (true)
     Console.WriteLine("2. Guess my favorite pokemon :]");
 
     UserChoice = Console.ReadKey().KeyChar;
-
-<<<<<<< HEAD
-=======
-    
-    if (UserChoice == '1')
->>>>>>> parent of 166f242 (VISUAL STUDIO IS WORKING HELL YEA)
     
     if (UserChoice == '1')
     
