@@ -20,8 +20,6 @@ char tempUserChoice;
 string favPokemonGuess;
 int hint = 0;
 
-
-
 #region Fav. Pokemon SPOILER!! TRY TO GUESS FIRT
 string favpokemon = "Hisuian Zorua";
 string favPokemonLowercase = "hisuian zorua";
