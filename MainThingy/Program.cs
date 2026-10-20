@@ -23,6 +23,7 @@ string favPokemonGuess;
 int hint = 0;
 string characterName;
 List<string> characteristics = new List<string>();
+characteristics = [];
 
 
 
@@ -171,7 +172,7 @@ while (true)
             {
                 break;
             }
-
+            
             else if (tempUserChoice == '1')
             {
                 Console.Clear();
