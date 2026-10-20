@@ -44,7 +44,7 @@ while (true)
 
     UserChoice = Console.ReadKey().KeyChar;
 
-    //NotePad
+    
     if (UserChoice == '1')
     
     {
