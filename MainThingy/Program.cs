@@ -14,11 +14,18 @@
  */
 
 //Here be setup
+using System.Reflection.PortableExecutable;
+
 char UserChoice; 
 int noteToDeleteInt;
 char tempUserChoice;
 string favPokemonGuess;
 int hint = 0;
+string characterName;
+List<string> characteristics = new List<string>();
+
+
+
 
 #region Fav. Pokemon SPOILER!! TRY TO GUESS FIRT
 string favpokemon = "Hisuian Zorua";
@@ -51,7 +58,7 @@ while (true)
 >>>>>>> parent of 166f242 (VISUAL STUDIO IS WORKING HELL YEA)
     
     if (UserChoice == '1')
-    #region NotePad
+    
     {
         Console.Clear();
         PrintGreen("Welcome to this questionable note pad!");
@@ -153,7 +160,7 @@ while (true)
             }
         }
     }
-    #endregion
+    
 
     if (UserChoice == '2')
     {
@@ -227,6 +234,23 @@ while (true)
             }
         }
     }
+
+    if (UserChoice == '3')
+    {
+        Console.Clear();
+        PrintGreen("Insert the name of a character");
+        Console.WriteLine("Name will not affect the outcome");
+
+
+
+
+
+    }
+
+
+
+
+
 }
 
 
