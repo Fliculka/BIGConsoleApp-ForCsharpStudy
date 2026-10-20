@@ -14,21 +14,21 @@
  */
 
 //Here be setup
-Char UserChoice;
+char UserChoice; 
 int noteToDeleteInt;
 char tempUserChoice;
+string favPokemonGuess;
+int hint = 0;
 
-
-
-//Copy paste of this
-//---------------------------------------------------------------------------------------------------------------------------
-/*
-UserChoice = Console.ReadKey().KeyChar;
-                if (UserChoice == 'q')
-                {
-                    break;
-                }
- */
+#region Fav. Pokemon SPOILER!! TRY TO GUESS FIRT
+string favpokemon = "Hisuian Zorua";
+string favPokemonLowercase = "hisuian zorua";
+string favPokemon3 = "Hisuian zoruak";
+string favPokemon4 = "hisuian Zorua";
+List<string> pokemonhints = new List<string>();
+pokemonhints = ["2 types", "Ghost type", "basic pokemon (Not an evolution)", "Has an evolution", "Species: Spiteful Fox Pokémon", "National variant"];
+//hints
+#endregion
 
 
 //Da main loop - The most abused thing here
@@ -40,10 +40,13 @@ while (true)
 
     PrintGreen("Click the number key of which... program... you want to try");
     Console.WriteLine("1. Note Pad");
+    Console.WriteLine("2. Guess my favorite pokemon :]");
 
     UserChoice = Console.ReadKey().KeyChar;
 
+    
     if (UserChoice == '1')
+    #region NotePad
     {
         Console.Clear();
         PrintGreen("Welcome to this questionable note pad!");
@@ -141,6 +144,80 @@ while (true)
                     {
                         continue;
                     }
+                }
+            }
+        }
+    }
+    #endregion
+
+    if (UserChoice == '2')
+    {
+        while (true)
+        {
+            Console.Clear();
+            PrintGreen("Hmmm, you want to try to guess my favorite pokemon huh?");
+            Console.WriteLine("Press 1 to try to guess");
+            Console.WriteLine("Press 2 to get a hint");
+            PrintRed("Press q to go to menu");
+
+            tempUserChoice = Console.ReadKey().KeyChar;
+            if (tempUserChoice == 'q')
+            {
+                break;
+            }
+
+            else if (tempUserChoice == '1')
+            {
+                Console.Clear();
+                PrintGreen("Try to guess");
+                Console.WriteLine("Don't worry about Capital or lowercase letters but ALL CAPS won't count [won't brick the code-just your guess will never be correct]");
+                favPokemonGuess = Console.ReadLine();
+                if (favPokemonGuess == favpokemon || favPokemonGuess == favPokemonLowercase || favPokemonGuess == favPokemon3 || favPokemonGuess == favPokemon4)
+                {
+                    PrintGreen("YOU GUESSED CORRECTLY!!");
+                    Console.WriteLine("It was indeed hisuian Zorua :]");
+                    Console.WriteLine("I luv em, they're so cuteeeeeee");
+                    PrintRed("press any key to exit to menu");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                }
+
+                else
+                {
+                    PrintRed("Nope");
+                    Console.WriteLine("You can go get a hint");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                }
+            }
+
+            else if (tempUserChoice == '2')
+            {
+                Console.Clear();
+                
+
+                if (hint < pokemonhints.Count)
+                {
+                    PrintGreen("New hint for you");
+                    for (int i = 0; i <= hint; i++)
+                    {
+                        Console.WriteLine(pokemonhints[i]);
+                    }
+                    hint++;
+                    PrintRed("Press anything to exit");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                }
+
+                else
+                {
+
+                    PrintGreen("No more new hints for ya");
+                for (int i = 0; i < pokemonhints.Count; i++)
+                    {
+                        Console.WriteLine(pokemonhints[i]);
+                    }
+                    
+                    PrintRed("Press anything to exit");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+
                 }
             }
         }
