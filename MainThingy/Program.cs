@@ -46,7 +46,7 @@ while (true)
 
     
     if (UserChoice == '1')
-    
+    #region NotePad
     {
         Console.Clear();
         PrintGreen("Welcome to this questionable note pad!");
@@ -148,7 +148,7 @@ while (true)
             }
         }
     }
-    
+    #endregion
 
     if (UserChoice == '2')
     {
