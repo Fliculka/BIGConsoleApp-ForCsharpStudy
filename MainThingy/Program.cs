@@ -36,7 +36,8 @@ string characterName;
 //List's insides
 characteristics = ["can't cook, like, at all.","strongly dislikes magnolia trees", "gets lost in malls", "oversleeps often", "loves spicy food", "is afraid of heights",
 "really loves waterparks", "likes spiders", "is allergic to pollen", "constantly loses things, but only the unimportant ones", "has a vendetta against trains", "holds a pencil wrong",
-"is very bad at skiing", "leaves their nightlamp on when they go to sleep", "could fall asleep at a party", "would love to throw tomato at someone one day"];
+"is very bad at skiing", "leaves their nightlamp on when they go to sleep", "could fall asleep at a party", "would love to throw tomato at someone one day", "always has an umbrella", "constantly broke",
+"gets irritated if someone takes their place at the table"];
 
 
 
@@ -294,6 +295,12 @@ static void PrintGreen(string message)
 static void PrintRed(string message)
     {
     Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine(message);
+    Console.ResetColor();
+    }
+static void PrintBlue(string message)
+    {
+    Console.ForegroundColor= ConsoleColor.Blue;
     Console.WriteLine(message);
     Console.ResetColor();
     }
