@@ -16,19 +16,34 @@
 //Here be setup
 using System.Reflection.PortableExecutable;
 
+//Lists
+List<string> notes = new List<string>();
+List<string> characteristics = new List<string>();
+
+//Random
+Random characteristicsrnd = new Random();
+
+//Random bullsheep. Idk if I even use every one of em T-T
 char UserChoice; 
 int noteToDeleteInt;
 char tempUserChoice;
 string favPokemonGuess;
 int hint = 0;
 string characterName;
-List<string> characteristics = new List<string>();
-characteristics = [];
+
+
+
+//List's insides
+characteristics = ["can't cook, like, at all.","strongly dislikes magnolia trees", "gets lost in malls", "oversleeps often", "loves spicy food", "is afraid of heights",
+"really loves waterparks", "likes spiders", "is allergic to pollen", "constantly loses things, but only the unimportant ones", "has a vendetta against trains", "holds a pencil wrong",
+"is very bad at skiing", "leaves their nightlamp on when they go to sleep", "could fall asleep at a party", "would love to throw tomato at someone one day"];
+
 
 
 
 
 #region Fav. Pokemon SPOILER!! TRY TO GUESS FIRT
+int failedTries = 0;
 string favpokemon = "Hisuian Zorua";
 string favPokemonLowercase = "hisuian zorua";
 string favPokemon3 = "Hisuian zoruak";
@@ -49,16 +64,18 @@ while (true)
     PrintGreen("Click the number key of which... program... you want to try");
     Console.WriteLine("1. Note Pad");
     Console.WriteLine("2. Guess my favorite pokemon :]");
+    Console.WriteLine("3. Roll a random characteristic for a character");
+
 
     UserChoice = Console.ReadKey().KeyChar;
-    
+    //NotePad - that took too long T-T
     if (UserChoice == '1')
     
     {
         Console.Clear();
         PrintGreen("Welcome to this questionable note pad!");
         Console.WriteLine("This runs on a list, hopes and dreams. And if it works, it's a miracle");
-        List<string> notes = new List<string>();
+        
         PrintRed("press anything to continue");
         tempUserChoice = Console.ReadKey().KeyChar;
 
@@ -156,7 +173,7 @@ while (true)
         }
     }
     
-
+    //Guess my favorite pokemon
     if (UserChoice == '2')
     {
         while (true)
@@ -184,6 +201,7 @@ while (true)
                     PrintGreen("YOU GUESSED CORRECTLY!!");
                     Console.WriteLine("It was indeed hisuian Zorua :]");
                     Console.WriteLine("I luv em, they're so cuteeeeeee");
+                    Console.WriteLine($"You guessed wrong: {failedTries} times");
                     PrintRed("press any key to exit to menu");
                     tempUserChoice = Console.ReadKey().KeyChar;
                 }
@@ -192,7 +210,9 @@ while (true)
                 {
                     PrintRed("Nope");
                     Console.WriteLine("You can go get a hint");
+                    failedTries++;
                     tempUserChoice = Console.ReadKey().KeyChar;
+
                 }
             }
 
@@ -230,22 +250,35 @@ while (true)
         }
     }
 
+    //Random characteristic
     if (UserChoice == '3')
     {
         Console.Clear();
         PrintGreen("Insert the name of a character");
         Console.WriteLine("Name will not affect the outcome");
+        characterName = Console.ReadLine();
+        Console.WriteLine($"Character name you chose is: {characterName}");
+        int characteristicInt = characteristicsrnd.Next(characteristics.Count - 1);
+        Console.Clear();
+        PrintGreen($"{characterName} {characteristics[characteristicInt]} ");
+        Console.WriteLine("Want to add it into your notepad? [Y / N]");
+        PrintRed("Pressing anything else will result in exiting");
 
-
-
-
-
+        tempUserChoice = Console.ReadKey().KeyChar;
+        if (tempUserChoice == 'Y' || tempUserChoice == 'y')
+        {
+            Console.Clear();
+            notes.Add($"{characterName} {characteristics[characteristicInt]}");
+            Console.WriteLine($"Note: {characterName} {characteristics[characteristicInt]} --was added");
+            PrintRed("Press anything to continue");
+            tempUserChoice = Console.ReadKey().KeyChar;
+        }
+        else
+        {
+            continue;
+        
+        }
     }
-
-
-
-
-
 }
 
 
