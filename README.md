@@ -4,6 +4,9 @@
 𖹭 Well, i was never great at coding. Even tho I have a class on it in school, It's not like I'm making big progress, and I forget a lot of stuff.\
 𖹭 So yea, this is basically a practice + Learning opportunity
 
+## ⋆˚꩜｡ Do I use AI?
+𖹭 HELL NAH
+𖹭 𖹭 The most is that I let copilot finish the (); after a Console.WriteLine, but not for figuring out code nor do I use it for anything else.
 
 ## ⋆˚꩜｡ IS THIS SCHOOLWORK????
 𖹭 No\
