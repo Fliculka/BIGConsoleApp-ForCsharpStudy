@@ -19,9 +19,11 @@ using System.Reflection.PortableExecutable;
 //Lists
 List<string> notes = new List<string>();
 List<string> characteristics = new List<string>();
+List<string> rockpaperscissors = new List<string>();
 
 //Random
 Random characteristicsrnd = new Random();
+Random rnd = new Random();
 
 //Random bullsheep. Idk if I even use every one of em T-T
 char UserChoice; 
@@ -30,7 +32,13 @@ char tempUserChoice;
 string favPokemonGuess;
 int hint = 0;
 string characterName;
-
+int randomnumber;
+string guess;
+int guessInt;
+int rockpaperscissorsAI;
+int rockpaperscissorsHuman = 0;
+int rockpaperWin = 0;
+int rockpaperLose = 0;
 
 
 //List's insides
@@ -39,6 +47,7 @@ characteristics = ["can't cook, like, at all.","strongly dislikes magnolia trees
 "is very bad at skiing", "leaves their nightlamp on when they go to sleep", "could fall asleep at a party", "would love to throw tomato at someone one day", "always has an umbrella", "constantly broke",
 "gets irritated if someone takes their place at the table"];
 
+rockpaperscissors = ["rock", "paper", "scissors"];
 
 
 
@@ -66,6 +75,8 @@ while (true)
     Console.WriteLine("1. Note Pad");
     Console.WriteLine("2. Guess my favorite pokemon :]");
     Console.WriteLine("3. Roll a random characteristic for a character");
+    Console.WriteLine("4. Guess a random number");
+    Console.WriteLine("5. Rock Paper Scissors");
 
 
     UserChoice = Console.ReadKey().KeyChar;
@@ -278,6 +289,187 @@ while (true)
         {
             continue;
         
+        }
+    }
+
+
+    if (UserChoice == '4')
+    {
+        Console.Clear();
+        randomnumber = rnd.Next(1, 10001);
+        PrintGreen("A random number has been chosen 1 - 10000");
+        Console.WriteLine("Write your guess");
+        PrintRed("Write exactly q to exit");
+
+        while (true)
+        {
+            guess = Console.ReadLine();
+            PrintGreen("Write your guess");
+            bool result = int.TryParse(guess, out guessInt);
+
+            if (result)
+            {
+                if (guessInt == randomnumber)
+                {
+                    PrintGreen($"YOU GUESSED IT!! IT INDEED WAS {randomnumber} ");
+                    PrintRed("Press anything to exit");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                    break;
+                }
+
+                else if (guessInt > randomnumber)
+                {
+                    Console.WriteLine($"{guessInt} is > than the number you're searching for");
+                }
+
+                else if (guessInt < randomnumber)
+                {
+                    Console.WriteLine($"{guessInt} is < than the number you're searching for");
+                }
+                else
+                {
+                    PrintRed("Debug");
+                }
+
+            }
+
+
+            if (!result)
+            {
+
+                if (guess == "q")
+                {
+                    break;
+                }
+
+                else
+                {
+                    PrintRed("Invalid imput - Not a number");
+                    PrintGreen("Guess again");
+
+                }
+            }
+        }
+    }
+
+    if (UserChoice == '5')
+    {
+        Console.Clear();
+        PrintGreen("Welcome to rock paper scissors");
+        PrintRed("Press q to exit");
+        Console.WriteLine("Press anything else to play");
+        tempUserChoice = Console.ReadKey().KeyChar;
+
+        if (tempUserChoice == 'q')
+        {
+            continue;
+        }
+
+        else
+        {
+            while (true)
+            {
+                Console.Clear();
+                rockpaperscissorsAI = rnd.Next(1, 4);
+
+                PrintGreen("Choose 1, 2 or 3 or q to quit");
+                Console.WriteLine("1 = rock, 2 = paper, 3 = scissors");
+                Console.WriteLine($"You won {rockpaperWin} times");
+                Console.WriteLine($"You lost {rockpaperLose} times");
+                tempUserChoice = Console.ReadKey().KeyChar;
+
+                if (tempUserChoice == 'q')
+                {
+                   break;
+                }
+
+                if (tempUserChoice == '1')
+                {
+                    rockpaperscissorsHuman = 1;
+                }
+
+                else if (tempUserChoice == '2')
+                {
+                    rockpaperscissorsHuman = 2;
+                }
+
+                else if (tempUserChoice == '3')
+                {
+                    rockpaperscissorsHuman = 3;
+                }
+
+
+                if (rockpaperscissorsHuman == rockpaperscissorsAI)
+                {
+                    Console.Clear();
+                    PrintGreen($"It's a tie, you chose {rockpaperscissors[rockpaperscissorsHuman - 1]} and Pepa chose {rockpaperscissors[rockpaperscissorsAI - 1]}");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                    continue;
+                }
+                else if (rockpaperscissorsHuman == 1)
+                {
+                    if (rockpaperscissorsAI == 2)
+                    {
+                        Console.Clear();
+                        PrintGreen($"You lost, you chose {rockpaperscissors[rockpaperscissorsHuman - 1]} and Pepa chose {rockpaperscissors[rockpaperscissorsAI - 1]}");
+                        rockpaperLose++;
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        PrintGreen($"You won, you chose {rockpaperscissors[rockpaperscissorsHuman - 1]} and Pepa chose {rockpaperscissors[rockpaperscissorsAI - 1]}");
+                        rockpaperWin++;
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                }
+
+                else if (rockpaperscissorsHuman == 2)
+                {
+                    if (rockpaperscissorsAI == 3)
+                    {
+                        Console.Clear();
+                        PrintGreen($"You lost, you chose {rockpaperscissors[rockpaperscissorsHuman - 1]} and Pepa chose {rockpaperscissors[rockpaperscissorsAI - 1]}");
+                        rockpaperLose++;
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        PrintGreen($"You won, you chose {rockpaperscissors[rockpaperscissorsHuman - 1]} and Pepa chose {rockpaperscissors[rockpaperscissorsAI - 1]}");
+                        rockpaperWin++;
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                }
+                else if (rockpaperscissorsHuman == 3)
+                {
+                    if (rockpaperscissorsAI == 1)
+                    {
+                        Console.Clear();
+                        PrintGreen($"You lost, you chose {rockpaperscissors[rockpaperscissorsHuman - 1]} and Pepa chose {rockpaperscissors[rockpaperscissorsAI - 1]}");
+                        rockpaperLose++;
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        PrintGreen($"You won, you chose {rockpaperscissors[rockpaperscissorsHuman - 1]} and Pepa chose {rockpaperscissors[rockpaperscissorsAI - 1]}");
+                        rockpaperWin++;
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                }
+
+                else
+                {
+                    PrintRed("Choose either 1, 2 or 3");
+                }
+            }
         }
     }
 }
