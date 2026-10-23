@@ -24,7 +24,7 @@
 
 ## ⋆˚꩜｡ Features!
 𖹭  What does this... Thingy... Contain?\
-
+𖹭  IT DEFINETLY CONTAINS CHAOS!!!! YAYYY
 𖹭  well lemme tell you (Sorted by time of making)\
 
 
