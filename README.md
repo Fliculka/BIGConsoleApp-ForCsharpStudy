@@ -58,6 +58,14 @@
   𖹭  Each wrong guess you get a HINT if your number is BIGGER or SMALLER\
   than the target\
   𖹭  CONGRATS if you WIN, it was originally 0 - max Int but that took so long -_-
+
+  ### ⋆. 𐙚 ˚Rock Paper Scissors
+  𖹭  The program is now called Pepa\
+  𖹭  Pepa randomly chooses rock, paper or scissors\
+  𖹭  You choose 1, 2 or 3 (rock paper or scissors)\
+  𖹭  Your choice get compared to Pepa's choice\
+  𖹭  You can WIN, LOSE or there can be a TIE\
+  𖹭  There are WIN and LOSE counters 
   
   
  
