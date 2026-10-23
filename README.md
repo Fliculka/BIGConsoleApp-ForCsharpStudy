@@ -52,12 +52,12 @@
   𖹭  save what you rolled into the NOTEPAD
 
   ### ⋆. 𐙚 ˚Guessing a random number
-  𖹭  RANDOM number between 0 to 10 000 gets selected
-  𖹭  You write your GUESSES
-  𖹭  SAFEGUARDED against non-int imput
-  𖹭  Each wrong guess you get a HINT if your number is BIGGER or SMALLER
-  than the target
-  𖹭  CONGRATS if you WIN, it was originally 0 - max Int but that took so long -_-
+  𖹭  RANDOM number between 0 to 10 000 gets selected\
+  𖹭  You write your GUESSES\
+  𖹭  SAFEGUARDED against non-int imput\
+  𖹭  Each wrong guess you get a HINT if your number is BIGGER or SMALLER\
+  than the target\
+  𖹭  CONGRATS if you WIN, it was originally 0 - max Int but that took so long -_-\
   
   
  
