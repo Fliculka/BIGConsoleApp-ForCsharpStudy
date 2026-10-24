@@ -65,8 +65,17 @@
   𖹭  You choose 1, 2 or 3 (rock paper or scissors)\
   𖹭  Your choice get compared to Pepa's choice\
   𖹭  You can WIN, LOSE or there can be a TIE\
-  𖹭  There are WIN and LOSE counters 
+  𖹭  There are WIN and LOSE counters\
+
+  ### ⋆. 𐙚 ˚Guess my favorite Uma! (from umamusume)
+  𖹭  It works similarly to the guess mu fav. pokemon minigame\
+  𖹭  You put in a guess\
+  𖹭  It tells you if you're right or wrong\
+  𖹭  You can go get a hint\
+  𖹭  you can guess again\
+  𖹭 **BUT WE HAVE A NEW FEATURE**\
+  𖹭  Each wrong answer now gets saved into a list\
+  𖹭  𖹭  You can display the list and see all your previous mistages\
+  𖹭  𖹭  In the pkm one, you can't see your previous guesses at all -_-
   
-  
- 
   More features to be added 𖹭
