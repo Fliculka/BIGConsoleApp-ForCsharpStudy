@@ -20,6 +20,8 @@ using System.Reflection.PortableExecutable;
 List<string> notes = new List<string>();
 List<string> characteristics = new List<string>();
 List<string> rockpaperscissors = new List<string>();
+List<string> umaGuesses = new List<string>();
+List<string> umaHints = new List<String>();
 
 //Random
 Random characteristicsrnd = new Random();
@@ -39,17 +41,20 @@ int rockpaperscissorsAI;
 int rockpaperscissorsHuman = 0;
 int rockpaperWin = 0;
 int rockpaperLose = 0;
+int umaHint = 0;
 
 
 //List's insides
 characteristics = ["can't cook, like, at all.","strongly dislikes magnolia trees", "gets lost in malls", "oversleeps often", "loves spicy food", "is afraid of heights",
 "really loves waterparks", "likes spiders", "is allergic to pollen", "constantly loses things, but only the unimportant ones", "has a vendetta against trains", "holds a pencil wrong",
 "is very bad at skiing", "leaves their nightlamp on when they go to sleep", "could fall asleep at a party", "would love to throw tomato at someone one day", "always has an umbrella", "constantly broke",
-"gets irritated if someone takes their place at the table"];
+"gets irritated if someone takes their place at the table", "really hates halloween", "still can't do math", "is amazing at biology trivia", "keeps loosing their left socks (or is something eating them 0-0)",
+"always inserts USB on the wrong way 3 times", "keeps tripping over their own feet", "is really good at tennis", "has never been to a sleepover", "dislikes the color orange",
+"doesn't have a favorite song"];
 
 rockpaperscissors = ["rock", "paper", "scissors"];
 
-
+umaHints = ["Long A", "Middle A", "Turf A", "Dirt A", "End closer A", "skill = Now We're Cruisin'! / Firelight", "Edo girl"];
 
 
 #region Fav. Pokemon SPOILER!! TRY TO GUESS FIRT
@@ -77,6 +82,7 @@ while (true)
     Console.WriteLine("3. Roll a random characteristic for a character");
     Console.WriteLine("4. Guess a random number");
     Console.WriteLine("5. Rock Paper Scissors");
+    Console.WriteLine("6. Guess my favorite umamusume character");
 
 
     UserChoice = Console.ReadKey().KeyChar;
@@ -249,13 +255,14 @@ while (true)
                 {
 
                     PrintGreen("No more new hints for ya");
-                for (int i = 0; i < pokemonhints.Count; i++)
+                    for (int i = 0; i < pokemonhints.Count; i++)
                     {
                         Console.WriteLine(pokemonhints[i]);
                     }
                     
                     PrintRed("Press anything to exit");
                     tempUserChoice = Console.ReadKey().KeyChar;
+                    continue;
 
                 }
             }
@@ -291,7 +298,6 @@ while (true)
         
         }
     }
-
 
     if (UserChoice == '4')
     {
@@ -468,6 +474,123 @@ while (true)
                 else
                 {
                     PrintRed("Choose either 1, 2 or 3");
+                }
+            }
+        }
+    }
+
+
+
+    //I have no clueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee what to dooooooooooooooooooooooooo
+    //What am I gonna do the next 11 weeks T-T
+    //Oh well, more guessing games ig, I really didn't know what more to do....
+    //Guess my favorite Uma, I dare you.
+    // if you didn't already get spoiled by the code -_-
+    //Its kinda impossible to make this stuff without spoilers...
+    if (UserChoice == '6')
+    {
+        while(true)
+        {
+            Console.Clear();
+            PrintGreen("Trying to guess my favorite uma huh...");
+            PrintGreen("Press 1 to guess");
+            PrintGreen("Press 2 for hints");
+            Console.WriteLine("Press 3 for list of your incorrect guesses");
+            PrintRed("Press q for exit");
+
+            tempUserChoice = Console.ReadKey().KeyChar;
+
+            if (tempUserChoice == 'q')
+            {
+                break;
+            }
+            if (tempUserChoice == '1')
+            {
+                while (true)
+                {
+                    Console.Clear();
+                    PrintGreen("Write your guess");
+                    Console.WriteLine("if the character has 2 names - mejiro ryan - write both");
+                    PrintRed("write q to exit");
+                    guess = Console.ReadLine();
+
+                    if (guess == "q")
+                    {
+                        break;
+                    }
+                    else if (guess == "Inari One" || guess == "inari one" || guess == "Inari one" || guess == "inari One")
+                    {
+                        Console.Clear();
+                        PrintGreen("Yep, you are correct :] My favorite uma is indeed Inari One - I LOVE HER GOLDEN DREAM OUTFIT AAAAA ");
+                        PrintRed("Press anything to exit");
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("nope, try again");
+                        PrintRed("Press anything to exit");
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        umaGuesses.Add(guess);
+                        continue;
+                    }
+                }
+            }
+
+            if (tempUserChoice == '2')
+            {
+                if (umaHint < umaHints.Count)
+                {
+                    Console.Clear();
+                PrintGreen("A new hint for ya");
+                for (int i = 0; i <= umaHint; i++) 
+                {
+                    Console.WriteLine(umaHints[i]);
+                }
+                umaHint++;
+                PrintRed("Press anything to exit");
+                tempUserChoice = Console.ReadKey().KeyChar;
+                continue;
+                }
+
+                else
+                {
+                    Console.Clear();
+                    PrintGreen("No new hints");
+                    for (int i = 0; i < umaHints.Count; i++)
+                    {
+                        Console.WriteLine(umaHints[i]);
+                    }
+                    PrintRed("Press anything to exit");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                    continue;
+                }
+            }
+
+            if (tempUserChoice == '3')
+            {
+                if (umaGuesses.Count > 0)
+                {
+                    Console.Clear();
+                    for (int i = 0; i < umaGuesses.Count; i++)
+                    {
+                        PrintRed(umaGuesses[i]);
+                    }
+
+                    Console.WriteLine("-----------------");
+                    PrintRed("Press anything to exit");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                    continue;
+                }
+                else
+                {
+                    Console.Clear();
+                    PrintRed("You haven't guessed wrong yet");
+                    Console.WriteLine("---------------");
+                    PrintRed("Press anything to exit");
+                    tempUserChoice = Console.ReadKey().KeyChar;
+                    continue;
                 }
             }
         }
