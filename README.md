@@ -16,9 +16,9 @@
   𖹭  So I am using my old schoolwork to hopefully fix my past mistakes AND LEARN
 
 ## ⋆˚꩜｡ How to download
-𖹭  I'll put an exe file into a folder named DOWNLOAD - Probaby, I'll update it when it's relevant.\
+𖹭  Download the zip, and click through the bin until yoy see the exe file (AM SORRY I DONT KNOW HOW ELSE TO DO IT T-T)\
 𖹭  If you don't trust random .exe files (understandable)\
-𖹭  𖹭  You can download the .cs file, which will be in the same folder as .exe\
+𖹭  𖹭  You can download the .cs file\
 𖹭  𖹭  𖹭  And you can run that in visual studio / other programs that can run .cs console apps
 
 
@@ -77,5 +77,10 @@
   𖹭  Each wrong answer now gets saved into a list\
   𖹭  𖹭  You can display the list and see all your previous mistages\
   𖹭  𖹭  In the pkm one, you can't see your previous guesses at all -_-
+
+  ### ⋆. 𐙚 ˚My song reccomendations
+  𖹭  It will randomly give you a song from a list I made
+  𖹭  You should go listen to it :3
+  𖹭  If you don't like it, sorry
   
   More features to be added 𖹭
