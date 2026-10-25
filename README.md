@@ -82,5 +82,3 @@
   𖹭  It will randomly give you a song from a list I made
   𖹭  You should go listen to it :3
   𖹭  If you don't like it, sorry
-  
-  More features to be added 𖹭
