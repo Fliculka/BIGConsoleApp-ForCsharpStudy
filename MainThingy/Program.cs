@@ -42,6 +42,7 @@ int rockpaperscissorsHuman = 0;
 int rockpaperWin = 0;
 int rockpaperLose = 0;
 int umaHint = 0;
+string guessUma;
 
 
 //List's insides
@@ -513,12 +514,13 @@ while (true)
                     Console.WriteLine("if the character has 2 names - mejiro ryan - write both");
                     PrintRed("write q to exit");
                     guess = Console.ReadLine();
+                    guessUma = guess.ToLower();
 
-                    if (guess == "q")
+                    if (guessUma == "q")
                     {
                         break;
                     }
-                    else if (guess == "Inari One" || guess == "inari one" || guess == "Inari one" || guess == "inari One")
+                    else if (guessUma == "inari one")
                     {
                         Console.Clear();
                         PrintGreen("Yep, you are correct :] My favorite uma is indeed Inari One - I LOVE HER GOLDEN DREAM OUTFIT AAAAA ");
@@ -526,6 +528,40 @@ while (true)
                         tempUserChoice = Console.ReadKey().KeyChar;
                         continue;
                     }
+                    else if (guessUma == "Kitasan Black")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("As much as I love Kitasan, she is not my fave");
+                        PrintRed("Press anything to exit");
+                        umaGuesses.Add(guessUma);
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                    else if (guessUma == "satono diamond")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Not my fave but I like her. THO I WANT TO PULL A KITASAN, NOT A 4TH COPY OF HER??");
+                        umaGuesses.Add(guessUma);
+                        tempUserChoice= Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                    else if (guessUma == "rice shower")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Not my fave, but she's a cutieeee");
+                        umaGuesses.Add(guessUma);
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+                    else if (guessUma == "mejiro mcqueen")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Not my fave, but I like her attitude towards Rice in the story");
+                        umaGuesses.Add(guessUma);
+                        tempUserChoice = Console.ReadKey().KeyChar;
+                        continue;
+                    }
+
                     else
                     {
                         Console.Clear();
