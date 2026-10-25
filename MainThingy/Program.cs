@@ -21,7 +21,8 @@ List<string> notes = new List<string>();
 List<string> characteristics = new List<string>();
 List<string> rockpaperscissors = new List<string>();
 List<string> umaGuesses = new List<string>();
-List<string> umaHints = new List<String>();
+List<string> umaHints = new List<string>();
+List<string> songs = new List<string>();
 
 //Random
 Random characteristicsrnd = new Random();
@@ -57,11 +58,12 @@ rockpaperscissors = ["rock", "paper", "scissors"];
 
 umaHints = ["Long A", "Middle A", "Turf A", "Dirt A", "End closer A", "skill = Now We're Cruisin'! / Firelight", "Edo girl"];
 
-
+songs = ["Drown in you - Daughtry", "Green world", "The carrion sings - Cygnet", "Die for you (feat. Neoni)", "Join me in death - HIM", "constellations (piano version) - Jade LeMac"];
 #region Fav. Pokemon SPOILER!! TRY TO GUESS FIRT
 int failedTries = 0;
 List<string> pokemonhints = new List<string>();
-pokemonhints = ["2 types", "Ghost type", "basic pokemon (Not an evolution)", "Has an evolution", "Species: Spiteful Fox Pokémon", "National variant"];
+pokemonhints = ["2 types", "Ghost type", "basic pokemon (Not an evolution)", "Has an evolution", "Species: Spiteful Fox Pokémon", "National variant", "Dashboard - Noah Kahan", "Night at the opera - Emei"
+    , "shatter me - Lindsey Stirling, Lzzy Hale", "Antigravity - Starset", "Awake and Alive - Skillet", "Superheroes - The Script", "Superhero - Simon Curtis"];
 //hints
 #endregion
 
@@ -80,6 +82,7 @@ while (true)
     Console.WriteLine("4. Guess a random number");
     Console.WriteLine("5. Rock Paper Scissors");
     Console.WriteLine("6. Guess my favorite umamusume character");
+    Console.WriteLine("7. Get a random song that I like");
 
 
     UserChoice = Console.ReadKey().KeyChar;
@@ -628,6 +631,18 @@ while (true)
             }
         }
     }
+
+    if (UserChoice == '7')
+    {
+        Console.Clear();
+        PrintGreen("Go listen to this :]");
+        randomnumber = rnd.Next(0, songs.Count);
+        Console.WriteLine(songs[randomnumber]);
+        PrintRed("Press anything to exit");
+        tempUserChoice = Console.ReadKey().KeyChar;
+        continue;
+    }
+
 }
 
 
