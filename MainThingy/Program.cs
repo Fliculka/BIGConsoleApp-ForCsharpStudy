@@ -60,10 +60,6 @@ umaHints = ["Long A", "Middle A", "Turf A", "Dirt A", "End closer A", "skill = N
 
 #region Fav. Pokemon SPOILER!! TRY TO GUESS FIRT
 int failedTries = 0;
-string favpokemon = "Hisuian Zorua";
-string favPokemonLowercase = "hisuian zorua";
-string favPokemon3 = "Hisuian zoruak";
-string favPokemon4 = "hisuian Zorua";
 List<string> pokemonhints = new List<string>();
 pokemonhints = ["2 types", "Ghost type", "basic pokemon (Not an evolution)", "Has an evolution", "Species: Spiteful Fox Pokémon", "National variant"];
 //hints
@@ -215,7 +211,8 @@ while (true)
                 PrintGreen("Try to guess");
                 Console.WriteLine("Don't worry about Capital or lowercase letters but ALL CAPS won't count [won't brick the code-just your guess will never be correct]");
                 favPokemonGuess = Console.ReadLine();
-                if (favPokemonGuess == favpokemon || favPokemonGuess == favPokemonLowercase || favPokemonGuess == favPokemon3 || favPokemonGuess == favPokemon4)
+                favPokemonGuess = favPokemonGuess.ToLower();
+                if (favPokemonGuess == "hisuian zorua")
                 {
                     PrintGreen("YOU GUESSED CORRECTLY!!");
                     Console.WriteLine("It was indeed hisuian Zorua :]");
