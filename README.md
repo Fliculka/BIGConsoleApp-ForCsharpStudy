@@ -82,3 +82,8 @@
   𖹭  It will randomly give you a song from a list I made
   𖹭  You should go listen to it :3
   𖹭  If you don't like it, sorry
+
+# See you next week!
+
+<img width="1280" height="640" alt="ISUrvivedWeek1-12" src="https://github.com/user-attachments/assets/94a519c8-6c53-4f27-834f-a576e5c4f87b" />
+
